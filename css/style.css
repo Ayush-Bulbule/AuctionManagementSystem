@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.fs-mplus {
+  font-family: "M PLUS 2", sans-serif;
+}
+
+.about-heading {
+  display: inline;
+  border-bottom: 3px solid #ffc107;
+}
+
+.button:hover {
+  transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  background-color: white;
+  color: black;
+}
+
+.mglass {
+  display: inline-block;
+  pointer-events: none;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+}
+
+.search:focus + .searchbutton {
+  transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  background-color: white;
+  color: black;
+}
+
+.search {
+  position: relative;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid #07ffac;
+  padding: 0;
+  width: 0;
+  height: 60%;
+  z-index: 10;
+  transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+}
+
+.search:focus {
+  width: 250px; /* Bar width+1px */
+  padding: 0 16px 0 0;
+}
+
+.expandright {
+  left: auto;
+  right: 49px; /* Button width-1px */
+}
+
+.expandright:focus {
+  padding: 0 0 0 16px;
+}
+
+.searchbutton {
+  cursor: pointer;
+}
+
+/* Modal */
+.modal-content {
+  border-radius: 5px;
+  border: none !important;
+  font-family: "M PLUS 2", sans-serif;
+}
+
+.text-mini {
+  font-size: 0.8rem;
+}
+
+.form-label {
+  font-size: 0.7rem;
+  margin-bottom: 0 !important;
+}
+.login-input {
+  outline: none;
+  border: none;
+}
+
+.login-form-input {
+  border: 1px solid #a5a5a5;
+  border-radius: 5px;
+}
