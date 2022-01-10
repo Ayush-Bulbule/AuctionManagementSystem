@@ -1,4 +1,4 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="z-index:-1;">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -9,7 +9,7 @@
             <img src="assets/images/eAuct.png" class="d-block h-25 w-100" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="assets/images/eAuct.png" class="d-block h-25 w-100" alt="...">
+            <img src="assets/images/slide2.png" class="d-block h-25 w-100" alt="...">
         </div>
         <div class="carousel-item">
             <img src="assets/images/eAuct.png" class="d-block h-25 w-100" alt="...">

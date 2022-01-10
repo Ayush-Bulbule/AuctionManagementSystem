@@ -3,6 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+.nav-blur {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.9);
+}
 
 .fs-mplus {
   font-family: "M PLUS 2", sans-serif;
@@ -94,6 +101,92 @@
 }
 
 .login-form-input {
-  border: 1px solid #a5a5a5;
+  border: 2px solid #d1d1d1;
   border-radius: 5px;
+}
+
+.btn-login,
+.btn-logout,
+.btn-register {
+  padding: 8px 22px;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  background-color: #ffc107;
+  color: white;
+}
+.btn-logout {
+  padding: 8px 22px;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  background-color: #ff2424;
+  color: white;
+}
+
+.btn-login-create {
+  font-weight: 500;
+  color: black;
+  text-decoration: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+form > div > div:focus-within {
+  background: #9fe0ff52;
+}
+input {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+input:focus {
+  background: transparent;
+  background-color: transparent;
+}
+
+input::placeholder {
+  font-weight: normal;
+}
+
+.nav-ic {
+  font-size: 1.1rem;
+  color: black !important;
+}
+
+.alert-success {
+  border-radius: 8px;
+  border: none;
+  position: relative;
+  margin-bottom: 30px;
+  box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1),
+    0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1),
+    0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12),
+    0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
+}
+
+.product-bid {
+  border-radius: 14px;
+  padding: 2px 10px;
+  background-color: #ffc107;
+  color: white;
+  font-weight: 500;
+  border: none;
+  position: relative;
+}
+
+.txt-card-category {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #1d1d1d;
+}
+.txt-card-desc {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #292929;
 }

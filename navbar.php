@@ -1,5 +1,9 @@
-<nav id="navbar" class="navbar navbar-expand-lg  shadow-sm navbar-light bg-light">
-    <div class="container">
+<?php
+require_once 'config/db.php';
+?>
+
+<nav id="navbar" class="navbar nav-blur navbar-expand-lg  shadow-sm navbar-light">
+    <div class="container bg-transparent">
         <a class="navbar-brand fw-bold" href="#">
             <img src="assets/images/logo3.png" alt="logo" width="30" height="24">
             eAuct</a>
@@ -25,80 +29,60 @@
                 <li class="nav-item d-flex align-items-center me-3">
                     <div class="search-container">
                         <form action="/search" method="get">
-                            <input class="search expandright" id="searchright" type="search" name="q" placeholder="Search">
-                            <label class="searchbutton" for="searchright"><i class="fas fa fa-search"></i></label>
+                            <!-- <input class="search expandright" id="searchright" type="search" name="q" placeholder="Search"> -->
+                            <label class="searchbutton" for="searchright"><i class="fas fa fa-search nav-ic"></i></label>
                         </form>
                     </div>
                     <!-- <a class="nav-link" href="#"><i class="fas fa-search"></i></a> -->
                 </li>
                 <li class="nav-item d-flex align-items-center me-3">
-                    <a class="nav-link" href="#"><i class="far fa-heart"></i></a>
+                    <a class="nav-link" href="#"><i class="far fa-heart nav-ic"></i></a>
                 </li>
                 <li class="nav-item d-flex align-items-center me-3 ">
-                    <a class="nav-link" href="#"><i class="fas fa-gavel"></i></a>
+                    <a class="nav-link" href="#"><i class="fas fa-gavel nav-ic"></i></a>
                 </li>
-                <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="far fa-user"></i>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a></li>
-                        <li><a class="dropdown-item" href="#">SignUp</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Manage Account</a></li>
-                    </ul>
-                </li>
+                <?php
+                if (!empty($_SESSION['user'])) {
+                ?>
+                    <li class="nav-item d-flex align-items-center me-3 ">
+                        <a class="nav-link" href="profile.php"> <i class="far fa-user nav-ic"></i></a>
+                    </li>
+                <?php
+                } else {
+                ?>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="far fa-user nav-ic"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">SignUp</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Manage Account</a></li>
+                        </ul>
+                    </li>
+                <?php
+                }
+                ?>
             </ul>
 
         </div>
     </div>
 </nav>
 
+<!-- Login -->
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content p-3">
-            <div class="row">
-                <div class="col-lg-7 px-0 col-md-7 col-12">
-                    <img src="assets/images/login_vect.jpg" alt="" class="img-fluid">
-                </div>
-                <div class="col-lg-5 pe-4 col-md-5 col-12 py-lg-4">
-                    <h3 class="text-center">Welcome Back:)</h3>
-                    <p class="text-mini">Sign in To Explore in a Better Way! Also Find out all the Features!!😊</p>
+<?php
+include 'login.php';
 
-                    <form action="login.php" class="mt-5" method="post">
-                        <div class="p-2 d-flex login-form-input flex-row align-items-center">
-                            <div class="form-icon pe-3">
-                                <i class="far fa-envelope " style="font-size: 1.6rem;  color:#a5a5a5;"></i>
-                            </div>
-                            <div class="form-input">
-                                <label for="inputEmail" class="form-label">Your Email</label>
-                                <input type="email" class="login-input " id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                            </div>
-                        </div>
-                        <div class="p-2 d-flex login-form-input flex-row align-items-center">
-                            <div class="form-icon pe-3">
-                                <i class="fas fa-unlock-alt" style="font-size: 1.6rem; color:#a5a5a5;"></i>
-                            </div>
-                            <div class="form-input">
-                                <label for="inputPassword" class="form-label">Password</label>
-                                <input type="password" class="login-input " id="inputPassword" aria-describedby="emailHelp" placeholder="Enter Password">
-                            </div>
-                        </div>
+// Registration
 
-                        <div class="form-group form-check my-4">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+include 'signup.php';
+?>
+<!-- Registration Modal -->
+
 
 <script>
     window.onscroll = function() {
